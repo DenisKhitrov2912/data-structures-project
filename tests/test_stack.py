@@ -18,6 +18,7 @@ class TestStack(unittest.TestCase):
         """Тестирование создания экземпляров"""
         node = Node(5, None)
         self.assertEqual(node.data, 5)
+        self.assertEqual(node.next_node, None)
 
 
 if __name__ == '__main__':
