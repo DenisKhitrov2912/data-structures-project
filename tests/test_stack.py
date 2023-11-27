@@ -16,9 +16,11 @@ class TestStack(unittest.TestCase):
 
     def test_node_creation(self):
         """Тестирование создания экземпляров"""
-        node = Node(5, None)
+        node = Node(5, Node(6, None))
+
         self.assertEqual(node.data, 5)
-        self.assertEqual(node.next_node, None)
+        self.assertEqual(node.next_node.data, 6)
+        self.assertEqual(node.next_node.next_node, None)
 
 
 if __name__ == '__main__':
