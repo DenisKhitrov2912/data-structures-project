@@ -1,6 +1,6 @@
 """Здесь надо написать тесты с использованием unittest для модуля stack."""
 import unittest
-from src.stack import Node, Stack
+from src.stack import Stack
 
 
 class TestStack(unittest.TestCase):
@@ -14,13 +14,10 @@ class TestStack(unittest.TestCase):
         self.assertEqual(stack.pop(), 2)
         self.assertEqual(stack.pop(), 1)
 
-    def test_node_creation(self):
-        """Тестирование создания экземпляров"""
-        node = Node(5, Node(6, None))
-
-        self.assertEqual(node.data, 5)
-        self.assertEqual(node.next_node.data, 6)
-        self.assertEqual(node.next_node.next_node, None)
+    def test_str(self):
+        """Тест магии str"""
+        stack = Stack()
+        self.assertEqual(stack.__str__(), "None")
 
 
 if __name__ == '__main__':
