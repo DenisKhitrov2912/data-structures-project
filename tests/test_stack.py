@@ -13,6 +13,7 @@ class TestStack(unittest.TestCase):
         self.assertEqual(stack.pop(), 3)
         self.assertEqual(stack.pop(), 2)
         self.assertEqual(stack.pop(), 1)
+        self.assertEqual(stack.pop(), None)
 
 
     def test_node_creation(self):
