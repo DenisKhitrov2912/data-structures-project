@@ -14,6 +14,7 @@ class TestStack(unittest.TestCase):
         self.assertEqual(stack.pop(), 2)
         self.assertEqual(stack.pop(), 1)
 
+
     def test_str(self):
         """Тест магии str"""
         stack = Stack()

@@ -12,22 +12,26 @@ class TestQueue(unittest.TestCase):
         queue.enqueue(3)
         self.assertEqual(str(queue), "1\n2\n3")
 
+
     def test_enqueue_single_element(self):
         """Первый в очереди"""
         queue = Queue()
         queue.enqueue(1)
         self.assertEqual(str(queue), "1")
 
+
     def test_enqueue_empty_queue(self):
         """Пустая очередь"""
         queue = Queue()
         self.assertEqual(str(queue), "")
+
 
     def test_init(self):
         """Тест инициализации"""
         queue = Queue()
         self.assertEqual(queue.tail, None)
         self.assertEqual(queue.head, None)
+
 
     def test_str(self):
         """Тест магии str"""
