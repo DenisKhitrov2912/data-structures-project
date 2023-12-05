@@ -14,6 +14,7 @@ class TestStack(unittest.TestCase):
         self.assertEqual(stack.pop(), 2)
         self.assertEqual(stack.pop(), 1)
 
+
     def test_node_creation(self):
         """Тестирование создания экземпляров"""
         node = Node(5, None)
