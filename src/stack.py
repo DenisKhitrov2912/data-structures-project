@@ -1,6 +1,7 @@
 class Node:
     """Класс для узла стека"""
 
+
     def __init__(self, data, next_node):
         """
         Конструктор класса Node
@@ -14,9 +15,11 @@ class Node:
 class Stack:
     """Класс для стека"""
 
+
     def __init__(self):
         """Конструктор класса Stack"""
         self.top = None
+
 
     def push(self, data):
         """
@@ -26,6 +29,7 @@ class Stack:
         """
         new_node = Node(data, self.top)
         self.top = new_node
+
 
     def pop(self):
         """
