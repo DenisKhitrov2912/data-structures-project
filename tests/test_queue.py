@@ -39,5 +39,23 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(queue.__str__(), "")
 
 
+    def test_call(self):
+        """Тест вызова dequeue"""
+        queue = Queue()
+        self.assertEqual(queue.__call__(), None)
+
+
+    def test_dequeue(self):
+        """Тест удаления из очереди"""
+        queue = Queue()
+        queue.enqueue(1)
+        queue.enqueue(2)
+        queue.enqueue(3)
+        self.assertEqual(queue.dequeue(), 1)
+        self.assertEqual(queue.dequeue(), 2)
+        self.assertEqual(queue.dequeue(), 3)
+        self.assertEqual(queue.dequeue(), None)
+
+
 if __name__ == '__main__':
     unittest.main()

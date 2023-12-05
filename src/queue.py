@@ -32,6 +32,11 @@ class Queue:
         return queue_str.rstrip("\n")
 
 
+    def __call__(self):
+        """Магия вызова dequeue"""
+        return self.dequeue()
+
+
     def enqueue(self, data):
         """
         Метод для добавления элемента в очередь
@@ -57,4 +62,13 @@ class Queue:
 
         :return: данные удаленного элемента
         """
-        pass
+        if self.head is None:
+            return None
+        else:
+            removed_data = self.head.data
+            self.head = self.head.next_node
+            if self.head is None:
+                self.tail = None
+            return removed_data
+
+
