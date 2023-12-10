@@ -45,6 +45,29 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(str(ll), "{'id': 1} -> {'id': 2} -> None")
 
 
+    def test_to_list(self):
+        """Тест занесения списка в список"""
+        ll = LinkedList()
+        ll.insert_beginning({'id': 1, 'username': '1'})
+        ll.insert_at_end({'id': 2, 'username': '2'})
+        lst = ll.to_list()
+        self.assertEqual(lst[1], {'id': 2, 'username': '2'})
+
+
+    def test_get_data_by_id(self):
+        """Тест поиска словаря по айди"""
+        ll = LinkedList()
+        ll.insert_beginning({'id': 1, 'username': '1'})
+        user_data = ll.get_data_by_id(1)
+        self.assertEqual(user_data, {'id': 1, 'username': '1'})
+        with self.assertRaises(TypeError):
+            ll.insert_at_end('iduser')
+            ll.get_data_by_id('iduser')
+        with self.assertRaises(TypeError):
+            ll.insert_at_end([1])
+            ll.get_data_by_id([1])
+
+
 if __name__ == '__main__':
     unittest.main()
 
